@@ -66,6 +66,17 @@ body { font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; backgrou
 .login-box input { width:100%; font-size:16px; padding:10px 14px; border:1px solid #d2d2d7; border-radius:8px; outline:none; margin-bottom:12px; text-align:center; }
 .login-box button { width:100%; font-size:15px; padding:10px; border:none; border-radius:8px; background:#0071e3; color:#fff; cursor:pointer; font-weight:600; }
 .login-box .error { color:#ff3b30; font-size:13px; margin-top:8px; display:none; }
+
+.help-btn{position:fixed;bottom:20px;left:20px;width:36px;height:36px;border-radius:50%;background:#0071e3;color:#fff;font-size:18px;font-weight:700;border:none;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.2);z-index:50;display:flex;align-items:center;justify-content:center;}
+.help-btn:hover{background:#005bb5;}
+.help-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:100;justify-content:center;align-items:center;}
+.help-modal.show{display:flex;}
+.help-content{background:#fff;border-radius:12px;padding:28px 32px;width:600px;max-width:95vw;max-height:85vh;overflow-y:auto;box-shadow:0 10px 40px rgba(0,0,0,0.2);}
+.help-content h2{font-size:20px;margin-bottom:16px;text-align:center;}
+.help-content h3{font-size:15px;margin:14px 0 6px;color:#0071e3;}
+.help-content p,.help-content li{font-size:13px;line-height:1.7;margin:4px 0;}
+.help-content ol,.help-content ul{padding-left:20px;}
+.help-close{display:block;margin:16px auto 0;padding:8px 24px;border:none;border-radius:8px;background:#e5e5ea;font-size:14px;cursor:pointer;font-weight:600;}
 </style></head><body>
 <div id="loginScreen" class="login-screen">
   <div class="login-box">
@@ -251,4 +262,44 @@ function applyTwist(){
 
 async function doLogin(){const pw=document.getElementById("pwInput").value;const r=await tryDecrypt(pw);if(r){initApp(JSON.parse(r));}else{document.getElementById("pwError").style.display="block";}}
 document.getElementById("pwInput").focus();
-</script></body></html>
+</script>
+<button class="help-btn" onclick="document.getElementById('helpModal').classList.add('show')">?</button>
+<div class="help-modal" id="helpModal">
+<div class="help-content">
+<h2>How to Use — ER URO Consult</h2>
+
+<h3>Overview</h3>
+<p>This tool helps you quickly find urology ER consultation templates. It organizes 120+ real consultation cases into 19 diagnosis categories with 42 management pathways.</p>
+
+<h3>Step 1: Search or Select a Diagnosis</h3>
+<p>Type a keyword in the search bar (e.g., "hematuria", "stone", "torsion") or click a quick keyword button. The left column will filter matching diagnosis categories.</p>
+
+<h3>Step 2: Choose a Management Pathway</h3>
+<p>Click a diagnosis in the left column. The middle column shows available management approaches (e.g., "Surgery", "Conservative", "MET + OPD"). Each pathway represents a different clinical scenario.</p>
+
+<h3>Step 3: Copy the Template</h3>
+<p>Click a pathway to see the English consultation template in the right column. You can:</p>
+<ul>
+<li><strong>Edit</strong> the text directly in the browser</li>
+<li><strong>Copy All</strong> to clipboard with one click</li>
+<li>Switching pathways resets to the original template</li>
+</ul>
+
+<h3>Special: TWIST Score Calculator</h3>
+<p>For "Testicular Torsion / Pain" → select "Assessment (PE / Lab / Echo / TWIST)" → click the <strong>TWIST Calc</strong> button to calculate the score interactively.</p>
+
+<h3>Special: Assessment Column</h3>
+<p>For Testicular Torsion, a 4th column "Assessment" appears between Diagnosis and Management, showing PE/Lab/Echo findings with a copyable template.</p>
+
+<h3>Tips</h3>
+<ul>
+<li>Multiple keywords work as AND search (e.g., "stone infection")</li>
+<li>All templates are derived from real consultation notes — not AI-generated content</li>
+<li>Password required for shared version</li>
+</ul>
+
+<button class="help-close" onclick="document.getElementById('helpModal').classList.remove('show')">Got it</button>
+</div>
+</div>
+
+</body></html>
