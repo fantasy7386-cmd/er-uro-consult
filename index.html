@@ -67,7 +67,7 @@ body { font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; backgrou
 .login-box button { width:100%; font-size:15px; padding:10px; border:none; border-radius:8px; background:#0071e3; color:#fff; cursor:pointer; font-weight:600; }
 .login-box .error { color:#ff3b30; font-size:13px; margin-top:8px; display:none; }
 
-.help-btn{position:fixed;bottom:20px;left:20px;width:36px;height:36px;border-radius:50%;background:#0071e3;color:#fff;font-size:18px;font-weight:700;border:none;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.2);z-index:50;display:flex;align-items:center;justify-content:center;}
+.help-btn{position:fixed;top:12px;right:20px;width:36px;height:36px;border-radius:50%;background:#0071e3;color:#fff;font-size:18px;font-weight:700;border:none;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.2);z-index:50;display:flex;align-items:center;justify-content:center;}
 .help-btn:hover{background:#005bb5;}
 .help-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:100;justify-content:center;align-items:center;}
 .help-modal.show{display:flex;}
@@ -266,36 +266,35 @@ document.getElementById("pwInput").focus();
 <button class="help-btn" onclick="document.getElementById('helpModal').classList.add('show')">?</button>
 <div class="help-modal" id="helpModal">
 <div class="help-content">
-<h2>How to Use — ER URO Consult</h2>
+<h2>操作說明</h2>
 
-<h3>Overview</h3>
-<p>This tool helps you quickly find urology ER consultation templates. It organizes 120+ real consultation cases into 19 diagnosis categories with 42 management pathways.</p>
+<h3>簡介</h3>
+<p>本工具將 120+ 筆真實泌尿科急診照會整理為 19 個診斷類別、42 條處置路徑，幫助你快速找到適合的英文照會回覆範本。</p>
 
-<h3>Step 1: Search or Select a Diagnosis</h3>
-<p>Type a keyword in the search bar (e.g., "hematuria", "stone", "torsion") or click a quick keyword button. The left column will filter matching diagnosis categories.</p>
+<h3>步驟一：搜尋或選擇診斷</h3>
+<p>在搜尋欄輸入關鍵字（如 "hematuria"、"stone"、"torsion"），或點擊下方快捷按鈕。左欄會篩選出對應的診斷類別。</p>
 
-<h3>Step 2: Choose a Management Pathway</h3>
-<p>Click a diagnosis in the left column. The middle column shows available management approaches (e.g., "Surgery", "Conservative", "MET + OPD"). Each pathway represents a different clinical scenario.</p>
+<h3>步驟二：選擇處置路徑</h3>
+<p>點選左欄的診斷後，中欄會顯示該診斷的處置選項（如 "Surgery"、"Conservative"、"MET + OPD"）。每條路徑代表不同的臨床情境。</p>
 
-<h3>Step 3: Copy the Template</h3>
-<p>Click a pathway to see the English consultation template in the right column. You can:</p>
+<h3>步驟三：複製範本</h3>
+<p>點選處置路徑後，右欄顯示英文照會範本。你可以：</p>
 <ul>
-<li><strong>Edit</strong> the text directly in the browser</li>
-<li><strong>Copy All</strong> to clipboard with one click</li>
-<li>Switching pathways resets to the original template</li>
+<li><strong>直接編輯</strong>文字內容</li>
+<li>點 <strong>Copy All</strong> 一鍵複製</li>
+<li>切換路徑會自動回復原始範本</li>
 </ul>
 
-<h3>Special: TWIST Score Calculator</h3>
-<p>For "Testicular Torsion / Pain" → select "Assessment (PE / Lab / Echo / TWIST)" → click the <strong>TWIST Calc</strong> button to calculate the score interactively.</p>
+<h3>特殊功能：TWIST Score 計算器</h3>
+<p>選擇「Testicular Torsion / Pain」→ 點選「Assessment (PE / Lab / Echo / TWIST)」→ 點 <strong>TWIST Calc</strong> 按鈕，互動勾選計算分數。</p>
 
-<h3>Special: Assessment Column</h3>
-<p>For Testicular Torsion, a 4th column "Assessment" appears between Diagnosis and Management, showing PE/Lab/Echo findings with a copyable template.</p>
+<h3>特殊功能：Assessment 欄位</h3>
+<p>在 Testicular Torsion 診斷下，會多出第 4 欄「Assessment」，顯示 PE / Lab / Echo 範本，可獨立複製。</p>
 
-<h3>Tips</h3>
+<h3>小提示</h3>
 <ul>
-<li>Multiple keywords work as AND search (e.g., "stone infection")</li>
-<li>All templates are derived from real consultation notes — not AI-generated content</li>
-<li>Password required for shared version</li>
+<li>可輸入多個關鍵字（如 "stone infection"），會以 AND 條件篩選</li>
+<li>所有範本皆源自真實照會紀錄，非 AI 生成內容</li>
 </ul>
 
 <button class="help-close" onclick="document.getElementById('helpModal').classList.remove('show')">Got it</button>
